@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htmlTask5</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background: linear-gradient(to bottom, #f1eab1, #f7b8dd);
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin-top: 50px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .c1 {
+            text-align: left;
+            font-weight: bold;
+            width: 150px;
+            display: inline-block;
+        }
+
+        .c2 input,
+        .c2 textarea {
+            width: calc(100% - 160px);
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-box {
+            background: linear-gradient(to bottom, #f1eab1, #f7b8dd);
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .register-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color: blue; text-align: center;">Registration Form</h1>
+        <div class="form-box">
+            <label class="c1">First Name</label>
+            <div class="c2"><input type="text"></div>
+
+            <label class="c1">Last Name:</label>
+            <div class="c2"><input type="text"></div>
+
+            <label class="c1">Email</label>
+            <div class="c2"><input type="email"></div>
+
+            <label class="c1">Password</label>
+            <div class="c2"><input type="password"></div>
+
+            <label class="c1">Re Password</label>
+            <div class="c2"><input type="password"></div>
+
+            <label class="c1">Gender</label>
+            <div class="c2">
+                <input type="radio">Male
+                <input type="radio">Female
+            </div>
+
+            <label class="c1">Age:</label>
+            <div class="c2"><input type="number"></div>
+
+            <label class="c1">Address:</label>
+            <div class="c2"><textarea rows="5"></textarea></div>
+
+            <label class="c1">State</label>
+            <div class="c2"><input type="text"></div>
+
+            <label class="c1">Country</label>
+            <div class="c2">
+                <select>
+                    <option selected>choose your country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                    <option>Germany</option>
+                </select>
+            </div>
+
+            <label class="c1">Languages Known</label>
+            <div class="c2">
+                <input type="checkbox">English
+                <input type="checkbox">Hindi
+                <input type="checkbox">Kannada
+                <input type="checkbox">Telugu
+            </div>
+
+            <div class="c1"></div>
+            <div class="c2">
+                <input type="checkbox" checked>Hereby I declare all the given details are true
+            </div>
+
+            <p style="text-align: right;">Log in to <a href="ethnus.com"> Ethnus</a> website</p>
+        </div>
+        <div class="button">
+            <button class="register-button" type="button">Register</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

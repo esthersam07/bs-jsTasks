@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <script>
+        function validateForm() {
+            var name = document.forms["contactForm"]["name"].value;
+            var email = document.forms["contactForm"]["email"].value;
+            var website = document.forms["contactForm"]["website"].value;
+            var message = document.forms["contactForm"]["message"].value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var urlRegex = /^(http|https):\/\/[^ "]+$/;
+
+            if (name == "") {
+                alert("This field is required");
+                return false;
+            }
+
+            if (message == "") {
+                alert("This field is required");
+                return false;
+            }
+
+            if (email !== "" && !email.match(emailRegex)) {
+                alert("A valid email address is required");
+                return false;
+            }
+
+            if (website !== "" && !website.match(urlRegex)) {
+                alert("A valid url is required");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="contactForm" onsubmit="return validateForm()" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br>
+
+        <label for="website">Website:</label>
+        <input type="text" id="website" name="website"><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

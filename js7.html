@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .square {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        margin: 20px auto;
+        animation: moveSquare 4s linear infinite;
+        transform: translateX(-100px); /* Start off the screen to the left */
+      }
+
+      @keyframes moveSquare {
+        0%,
+        100% {
+          transform: translateX(-100px); /* Start off the screen to the left */
+        }
+        50% {
+          transform: translateX(
+            calc(100vw - 100px)
+          ); /* Move horizontally the full screen length */
+        }
+      }
+
+      .button-container {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #start-button {
+        background-color: #27ae60;
+        color: #fff;
+        border: none;
+      }
+
+      #stop-button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+      }
+
+      #instructions {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="square"></div>
+      <p id="instructions">Click the following buttons to handle animation</p>
+      <div class="button-container">
+        <button id="start-button">Start Moving</button>
+        <button id="stop-button">Stop Moving</button>
+      </div>
+    </div>
+
+    <script>
+      const square = document.querySelector(".square");
+      const startButton = document.getElementById("start-button");
+      const stopButton = document.getElementById("stop-button");
+      let animationInterval;
+
+      startButton.addEventListener("click", () => {
+        square.style.animationPlayState = "running";
+        clearInterval(animationInterval);
+        animationInterval = setInterval(() => {
+          square.style.animationPlayState = "running";
+        }, 4000); // Restart animation every 4 seconds for full round trip
+      });
+
+      stopButton.addEventListener("click", () => {
+        square.style.animationPlayState = "paused";
+        clearInterval(animationInterval);
+      });
+
+      // Auto-start the animation when the page loads
+      square.style.animationPlayState = "running";
+    </script>
+  </body>
+</html>
